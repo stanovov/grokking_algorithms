@@ -10,31 +10,27 @@ import static org.junit.Assert.*;
 public class BinarySearchTest {
     @Test
     public void whenBinarySearchInArrayOfNumbersFound() {
-        Integer[] array = new Integer[]{
-                1, 3, 5, 7, 9
-        };
-        BinarySearch<Integer> search = new BinarySearch<>(Comparator.naturalOrder());
-        int result = search.find(array, 3);
+        Integer[] array = {1, 3, 5, 7, 9};
+        BinarySearch<Integer> search = new BinarySearch<>();
+        int result = search.find(array, 3, Comparator.naturalOrder());
         int expected = 1;
         assertThat(result, is(expected));
     }
 
     @Test
     public void whenBinarySearchInArrayOfNumbersNotFound() {
-        Integer[] array = new Integer[]{
-                1, 3, 5, 7, 9
-        };
-        BinarySearch<Integer> search = new BinarySearch<>(Comparator.naturalOrder());
-        int result = search.find(array, -1);
+        Integer[] array = {1, 3, 5, 7, 9};
+        BinarySearch<Integer> search = new BinarySearch<>();
+        int result = search.find(array, -1, Comparator.naturalOrder());
         int expected = -1;
         assertThat(result, is(expected));
     }
 
     @Test
     public void whenEmptyArray() {
-        Integer[] array = new Integer[0];
-        BinarySearch<Integer> search = new BinarySearch<>(Comparator.naturalOrder());
-        int result = search.find(array, -1);
+        Integer[] array = {};
+        BinarySearch<Integer> search = new BinarySearch<>();
+        int result = search.find(array, -1, Comparator.naturalOrder());
         int expected = -1;
         assertThat(result, is(expected));
     }
