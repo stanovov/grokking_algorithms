@@ -23,17 +23,4 @@ public class BreadthFirstSearch<T extends Graph> {
         }
         return result;
     }
-
-    public static void main(String[] args) {
-        SimpleGraph g1 = new SimpleGraph("Boris", List.of());
-        SimpleGraph g2 = new SimpleGraph("Rudulf", List.of(
-                new SimpleGraph("Robert", List.of())
-        ));
-        SimpleGraph g3 = new SimpleGraph("Semyon", List.of(g1, g2));
-        boolean rsl = new BreadthFirstSearch<SimpleGraph>().find(
-                g3,
-                graph -> graph.getName().equals("Rudulf")
-        );
-        System.out.println(rsl);
-    }
 }
